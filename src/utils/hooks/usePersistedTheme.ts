@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { PropertsOfUsePersistedTheme } from "./types";
+import { PropertsOfUsePersistedTheme } from "../../types/hooks";
 import { themes } from "../../styles/themes";
 
 export const usePersistedTheme = ({
