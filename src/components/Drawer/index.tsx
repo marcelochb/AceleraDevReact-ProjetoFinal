@@ -2,21 +2,25 @@ import React from 'react';
 
 
 import './styles.scss';
-import { TypeDrawer } from '../../types/components';
+import { TypeDrawer, typeOfDrawer } from '../../types/components';
 import { HeaderDrawer } from '../HeaderDrawer';
+import { ShoppingBag } from '../ShoppingBag';
+import { SearchProducts } from '../SearchProducts';
 
 export const Drawer: React.FC<TypeDrawer> = ({
   isDrawerVisible,
-  toggleDrawerVisible
+  closeDrawer,
+  typeOfDrawerOpened,
 }) => {
 
 
   return (
     <div className={`drawer ${isDrawerVisible ? 'drawer--is-visible' : ''}`}>
-      <HeaderDrawer toggleDrawerVisible={toggleDrawerVisible} />
+      <HeaderDrawer closeDrawer={closeDrawer} typeOfDrawerOpened={typeOfDrawerOpened} />
 
       <div className="drawer__content">
-
+        {typeOfDrawerOpened === typeOfDrawer.ShoppingBag && <ShoppingBag />}
+        {typeOfDrawerOpened === typeOfDrawer.SearchOfProducts && <SearchProducts />}
       </div>
     </div>
   );

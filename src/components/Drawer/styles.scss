@@ -25,6 +25,7 @@
   background: var(--background-color);
   height: 100vh;
   overflow-y: auto;
-  padding-top: 5.5rem;
+  padding-top: var(--padding-largest);
+  margin-top: var(--margin-large);
   width: 100%;
 }
