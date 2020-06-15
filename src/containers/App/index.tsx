@@ -6,18 +6,19 @@ import { usePersistedTheme, useDrawer } from '../../utils/hooks';
 import { Routes } from '../../routes';
 export const App = () => {
   const { toggleTheme, titleOfCurrentTheme } = usePersistedTheme({ initialTypeOfTheme: 'Dark', keyOfLocalStorageToTheme: 'theme' })
-  const { drawerIsVisible, toggleDrawerVisible } = useDrawer();
+  const { getUseDrawer, handleUseDrawer } = useDrawer();
   return (
-    <div className={`app ${drawerIsVisible ? 'app--is-drawer-visible' : ''}`}>
+    <div className={`app ${getUseDrawer.drawerIsVisible ? 'app--is-drawer-visible' : ''}`}>
       <BrowserRouter>
         <Header
           toggleTheme={toggleTheme}
           titleOfCurrentTheme={titleOfCurrentTheme}
-          toggleDrawerVisible={toggleDrawerVisible}
+          openDrawer={handleUseDrawer.openDrawer}
         />
         <Drawer
-          isDrawerVisible={drawerIsVisible}
-          toggleDrawerVisible={toggleDrawerVisible}
+          isDrawerVisible={getUseDrawer.drawerIsVisible}
+          closeDrawer={handleUseDrawer.closeDrawer}
+          typeOfDrawerOpened={getUseDrawer.typeOfDrawerOpened}
         />
         <Routes />
       </BrowserRouter>

@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import { ShoppingBag, Search } from 'react-feather';
 import './styles.scss';
 import { ButtonTheme } from '../ButtonTheme';
-import { TypesHeader } from '../../types/components';
+import { TypesHeader, typeOfDrawer } from '../../types/components';
 
 export const Header: React.FC<TypesHeader> = ({
   titleOfCurrentTheme,
   toggleTheme,
-  toggleDrawerVisible,
+  openDrawer
 }) => {
   return (
     <header className="header">
@@ -23,14 +23,14 @@ export const Header: React.FC<TypesHeader> = ({
           <div className="header__icons">
 
             <button className="icon"
-              onClick={toggleDrawerVisible}
+              onClick={() => openDrawer({ typeOfDrawer: typeOfDrawer.SearchOfProducts })}
             >
 
               <Search />
             </button>
 
             <button className="icon"
-              onClick={toggleDrawerVisible}
+              onClick={() => openDrawer({ typeOfDrawer: typeOfDrawer.ShoppingBag })}
             >
               <ShoppingBag />
             </button>

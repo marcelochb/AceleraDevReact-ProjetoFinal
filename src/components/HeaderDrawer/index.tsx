@@ -3,20 +3,25 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 import './styles.scss';
-import { TypeHeaderDrawer } from '../../types/components';
+import { TypeHeaderDrawer, typeOfDrawer } from '../../types/components';
 export const HeaderDrawer: React.FC<TypeHeaderDrawer> = ({
-  toggleDrawerVisible
+  closeDrawer,
+  typeOfDrawerOpened
 }) => {
   return (
     <header className="header__drawer">
       <div className="container">
         <button
-          onClick={toggleDrawerVisible}
+          onClick={closeDrawer}
         >
           <FontAwesomeIcon icon={faArrowLeft} />
 
         </button>
-        <text>Sacola de compras (0)</text>
+        <text>{
+          typeOfDrawerOpened === typeOfDrawer.ShoppingBag
+            ? 'Sacola (0)'
+            : 'Buscar Produtos'
+        }</text>
       </div>
     </header>
   );
