@@ -1,0 +1,18 @@
+.header__drawer {
+  background-color: var(--elements-color);
+  color: var(--text-color);
+  padding: var(--padding-smallest) 0;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+
+.header__drawer button {
+  color: var(--text-color);
+  padding: var(--padding-smallest) 0;
+  margin-right: var(--margin-largest);
+}
+
+.header__drawer text {
+  margin-left: var(--margin-largest);
+}

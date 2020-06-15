@@ -1,0 +1,32 @@
+.header {
+  background-color: var(--elements-color);
+  color: var(--text-color);
+  padding: var(--padding-smallest) 0;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+
+  .header__logo {
+    color: var(--text-color);
+    border-radius: 5px;
+    padding: 8px;
+  }
+
+  .header__icons {
+    display: flex;
+    align-items: center;
+    .icon {
+      display: flex;
+      color: var(--text-color);
+      justify-content: flex-end;
+      background: transparent;
+      border: none;
+    }
+  }
+
+  .header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
