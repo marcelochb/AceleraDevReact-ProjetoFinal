@@ -4,22 +4,22 @@ import { faMoon as faMoonRegular } from '@fortawesome/free-regular-svg-icons';
 import { faMoon as faMoonSolid } from '@fortawesome/free-solid-svg-icons';
 import { TypesButtonTheme } from '../../types/components';
 
-// import { Container } from './styles';
+import './styles.scss';
 
 export const ButtonTheme: React.FC<TypesButtonTheme> = ({
-  title,
-  toggleTheme
+  toggleTheme,
+  titleOfCurrentTheme,
 }) => {
-  const iconMoon = title === 'Light' ? faMoonSolid : faMoonRegular
-
+  const iconMoon = titleOfCurrentTheme === 'Light' ? faMoonSolid : faMoonRegular
+  const titleOfNextTheme = titleOfCurrentTheme === 'Light' ? 'Dark' : 'Light';
   return (
-    <div className='buttonTheme' data-testid='buttonTheme'>
+    <div className='button__theme'>
       <FontAwesomeIcon icon={iconMoon} />
 
       <button
         onClick={toggleTheme}
       >
-        {title} mode
+        {titleOfNextTheme} mode
     </button>
     </div>
 

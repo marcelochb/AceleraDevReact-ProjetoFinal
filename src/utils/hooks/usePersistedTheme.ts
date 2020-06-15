@@ -10,24 +10,25 @@ export const usePersistedTheme = ({
     localStorage.getItem(keyOfLocalStorageToTheme) || initialTypeOfTheme
   );
 
+  console.log("theme", localStateOfTheme);
   const toggleTheme = () => {
-    const themeToggled =
-      localStateOfTheme === "Light" ? themes["Dark"] : themes["Light"];
-    themeToggled.forEach((key) => {
-      document.documentElement.style.setProperty(
-        key.variableNameOfCss,
-        key.variableValueOfCss
-      );
-    });
     setLocalStateOfTheme(localStateOfTheme === "Light" ? "Dark" : "Light");
   };
 
   useEffect(() => {
-    localStorage.setItem(
-      keyOfLocalStorageToTheme,
-      JSON.stringify(localStateOfTheme)
-    );
+    const loadTheme = () => {
+      const themeToggled =
+        localStateOfTheme === "Light" ? themes["Light"] : themes["Dark"];
+      themeToggled.forEach((key) => {
+        document.documentElement.style.setProperty(
+          key.variableNameOfCss,
+          key.variableValueOfCss
+        );
+      });
+      localStorage.setItem(keyOfLocalStorageToTheme, localStateOfTheme);
+    };
+    loadTheme();
   }, [keyOfLocalStorageToTheme, localStateOfTheme]);
 
-  return { toggleTheme };
+  return { toggleTheme, titleOfCurrentTheme: localStateOfTheme };
 };

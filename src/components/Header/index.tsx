@@ -3,21 +3,28 @@ import { Link } from 'react-router-dom';
 import { ShoppingBag } from 'react-feather';
 import './styles.scss';
 import { ButtonTheme } from '../ButtonTheme';
+import { TypesHeader } from '../../types/components';
 
-export const Header: React.FC = () => {
+export const Header: React.FC<TypesHeader> = ({
+  titleOfCurrentTheme,
+  toggleTheme,
+  toggleDrawerVisible,
+}) => {
   return (
-    <header className="topbar">
+    <header className="header">
       <div className="container">
-        <div className="topbar__content">
+        <div className="header__content">
           <Link to="/">
-            <div className="topbar__logo">
+            <div className="header__logo">
               FASHIONISTA
             </div>
           </Link>
-          <ButtonTheme title='Dark' toggleTheme={() => { }} />
-          <div className="topbar__icons">
+          <ButtonTheme titleOfCurrentTheme={titleOfCurrentTheme} toggleTheme={toggleTheme} />
+          <div className="header__icons">
 
-            <button className="icon">
+            <button className="icon"
+              onClick={toggleDrawerVisible}
+            >
 
               <ShoppingBag />
             </button>
