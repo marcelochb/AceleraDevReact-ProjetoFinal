@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShoppingBag } from 'react-feather';
+import { ShoppingBag, Search } from 'react-feather';
 import './styles.scss';
 import { ButtonTheme } from '../ButtonTheme';
 import { TypesHeader } from '../../types/components';
@@ -26,6 +26,12 @@ export const Header: React.FC<TypesHeader> = ({
               onClick={toggleDrawerVisible}
             >
 
+              <Search />
+            </button>
+
+            <button className="icon"
+              onClick={toggleDrawerVisible}
+            >
               <ShoppingBag />
             </button>
           </div>
