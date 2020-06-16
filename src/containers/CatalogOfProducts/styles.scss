@@ -1,0 +1,16 @@
+.products {
+  padding-top: var(--padding-largest);
+}
+
+.products__items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.products__quantity {
+  margin-top: var(--margin-base);
+  margin-left: var(--margin-base);
+  p {
+    color: var(--text-color);
+  }
+}
