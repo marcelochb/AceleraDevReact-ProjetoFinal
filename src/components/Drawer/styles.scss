@@ -1,6 +1,6 @@
 .drawer {
   backface-visibility: hidden;
-  background: white;
+  background: var(--background-color);
   display: flex;
   flex-direction: row;
   min-height: 100vh;

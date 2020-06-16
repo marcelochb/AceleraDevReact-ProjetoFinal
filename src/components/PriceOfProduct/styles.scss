@@ -1,0 +1,14 @@
+.product__price {
+  margin-top: var(--margin-base);
+  font-weight: bold;
+  color: var(--text-color);
+  font-size: 1.3em;
+
+  span {
+    margin-left: var(--margin-base);
+    font-weight: normal;
+    text-decoration: line-through;
+    color: #666;
+    font-size: initial;
+  }
+}
